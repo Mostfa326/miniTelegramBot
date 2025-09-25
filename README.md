@@ -30,13 +30,5 @@
 
 <h3>📂 Example Code</h3>
 
-```python
-import telebot
-
-bot = telebot.TeleBot("YOUR_BOT_TOKEN")
-
-@bot.message_handler(commands=['start'])
-def start(message):
-    bot.reply_to(message, "Hello! 👋 This is a mini Telegram bot.")
 
 bot.polling()
