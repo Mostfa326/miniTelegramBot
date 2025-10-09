@@ -12,23 +12,29 @@
 
 <hr/>
 
-<h2 id="english">🌍 English</h2>
-<p>
-  Hello 👋  
-  Welcome to <b>Mini Telegram Bots</b>!  
-  Here I share some of my small Telegram bots written in my free time.  
-  Most of them are built using the <code>TeleBot</code> library (also known as <code>pyTelegramBotAPI</code>).  
-  Each bot is designed with <b>simple, clean, and beginner-friendly code</b>, making them easy to understand and extend. 🚀  
-</p>
+## 🌍 English
 
-<h3>✨ Features</h3>
-<ul>
-  <li>Simple and easy-to-read code structure</li>
-  <li>Based on <code>pyTelegramBotAPI</code> (TeleBot)</li>
-  <li>Perfect for learning and small projects</li>
-</ul>
+Hello 👋  
+Welcome to **Mini Telegram Bots**!  
+Here I share some of my small Telegram bots that I build in my free time.  
+Most of them are written using the `TeleBot` library (also known as `pyTelegramBotAPI`).  
 
-<h3>📂 Example Code</h3>
+Each bot is designed to be **simple, clean, and beginner-friendly**, so you can easily understand, edit, and use them in your own projects. 🚀  
 
+### ✨ Features
+- Simple and readable Python code  
+- Built with `TeleBot` (pyTelegramBotAPI)  
+- Perfect for learning or small personal projects  
+- Open source — you can use and modify the code freely  
+
+### 📂 Example Code
+```python
+import telebot
+
+bot = telebot.TeleBot("YOUR_TOKEN_HERE")
+
+@bot.message_handler(commands=['start'])
+def start(msg):
+    bot.send_message(msg.chat.id, "Hello! 👋 Welcome to Mini Bots.")
 
 bot.polling()
