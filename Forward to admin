@@ -1,0 +1,20 @@
+import telebot
+
+TOKEN = ""#توکن ربات تلگرام
+ADMIN_ID = 123456789  # آیدی عددی
+
+bot = telebot.TeleBot(TOKEN)
+
+@bot.message_handler(commands=['start'])
+def start(msg):
+    bot.send_message(msg.chat.id, "سلام پیام‌ت رو بنویس تا برای ادمین ارسال کنم.")
+
+@bot.message_handler(func=lambda m: True)
+def forward_to_admin(msg):
+    # فوروارد پیام کاربر برای ادمین
+    bot.forward_message(ADMIN_ID, msg.chat.id, msg.message_id)
+    # پیام تایید برای کاربر
+    bot.send_message(msg.chat.id, "✅ پیامت برای ادمین ارسال شد!")
+
+bot.infinity_polling()
+
